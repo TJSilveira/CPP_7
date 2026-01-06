@@ -3,8 +3,6 @@
 #include <iostream>
 #include <iomanip>
 #include <ostream>
-#include <limits>
-#include <cmath>
 
 template<typename T>
 void	swap(T elem1, T elem2)
