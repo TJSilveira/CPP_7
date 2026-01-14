@@ -5,7 +5,7 @@
 #include <ostream>
 
 template<typename T>
-void	swap(T elem1, T elem2)
+void	swap(T &elem1, T &elem2)
 {
 	T temp;
 
@@ -15,7 +15,7 @@ void	swap(T elem1, T elem2)
 }
 
 template<typename T>
-T	min(T elem1, T elem2)
+T	min(T &elem1, T &elem2)
 {
 	if (elem1 < elem2)
 		return (elem1);
@@ -24,7 +24,7 @@ T	min(T elem1, T elem2)
 }
 
 template<typename T>
-T	max(T elem1, T elem2)
+T	max(T &elem1, T &elem2)
 {
 	if (elem1 > elem2)
 		return (elem1);

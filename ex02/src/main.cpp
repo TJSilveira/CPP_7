@@ -1,5 +1,15 @@
 #include "../includes/Array.hpp"
 
+class Awesome
+{
+public:
+Awesome( void ) : _n( 42 ) { return; }
+int get( void ) const { return this->_n; }
+private:
+int _n;
+};
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+
 void create_empty_array(void)
 {
 	Array<int> a;
@@ -57,11 +67,23 @@ void create_2_arrays(void)
 		std::cout << "Array a ["<< i << "]: "<<a[i] << "\n";
 }
 
+void create_awesome_arrays(void)
+{
+	Array<Awesome> a(10);
+
+	std::cout << a.size() << "\n";
+	for (size_t i = 0; i < a.size(); i++)
+		a[i].get();
+	for (size_t i = 0; i < a.size(); i++)
+		std::cout << "Array awesome ["<< i << "]: "<<a[i] << "\n";
+}
+
 int main( void )
 {
 	create_empty_array();
 	create_int_array();
 	create_char_array();
 	create_2_arrays();
+	create_awesome_arrays();
 	return (0);
 }
